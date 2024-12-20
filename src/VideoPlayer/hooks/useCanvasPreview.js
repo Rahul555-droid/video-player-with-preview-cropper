@@ -67,7 +67,6 @@ export const useCanvasPreview = (
     worker.onmessage = () => {
       updateCanvasPreview()
     }
-
     worker.postMessage('start')
 
     return () => {

@@ -1,6 +1,13 @@
-
 import { memo } from 'react'
-import { ASPECT_RATIOS } from 'VideoPlayer/constant';
+import { ASPECT_RATIOS } from 'VideoPlayer/constant'
+
+const formatTime = (seconds) => {
+  const minutes = Math.floor(seconds / 60)
+  const secs = Math.floor(seconds % 60)
+    .toString()
+    .padStart(2, '0')
+  return `${minutes}:${secs}`
+}
 
 const VideoControls = ({
   progress,
@@ -11,15 +18,39 @@ const VideoControls = ({
   playbackRate,
   handlePlaybackRateChange,
   aspectRatio,
-  handleAspectRatioChange
+  handleAspectRatioChange,
+
+  handleSeekChange,
+  handleSeekMouseDown,
+  handleSeekMouseUp,
+  duration,
+  currentTime
 }) => {
   return (
     <div className="mt-4 space-y-4">
-      <div className="w-full h-2 rounded-full bg-[#45474E]">
-        <div
-          className="h-full bg-blue-600 rounded-full transition-all"
-          style={{ width: `${progress}%` }}
-        />
+      <div className="flex flex-col items-center">
+        <div className="w-full h-2 rounded-full bg-[#45474E] relative">
+          <div
+            className="h-full bg-blue-600 rounded-full transition-all"
+            style={{ width: `${progress}%` }}
+          />
+          <input
+            type="range"
+            min="0"
+            max={duration}
+            step="0.1"
+            value={currentTime}
+            onChange={handleSeekChange}
+            onMouseDown={handleSeekMouseDown}
+            onMouseUp={handleSeekMouseUp}
+            className="absolute top-0 w-full opacity-0 h-2 cursor-pointer"
+          />
+        </div>
+
+        <div className="flex justify-between w-full text-xs text-gray-400 mt-2">
+          <span>{formatTime(currentTime)}</span>
+          <span>{formatTime(duration)}</span>
+        </div>
       </div>
 
       <div className="flex gap-6 justify-between items-center text-white">
@@ -76,4 +107,4 @@ const VideoControls = ({
   )
 }
 
-export default memo(VideoControls);
+export default memo(VideoControls)

@@ -19,7 +19,10 @@ const VideoPlayer = () => {
     togglePlay,
     handleVolumeChange,
     handlePlaybackRateChange,
-    handleTimeUpdate
+    handleTimeUpdate,
+    handleSeekChange,
+    handleSeekMouseDown,
+    handleSeekMouseUp
   } = useVideoState(videoRef)
 
   const {
@@ -83,6 +86,11 @@ const VideoPlayer = () => {
             handlePlaybackRateChange={handlePlaybackRateChange}
             aspectRatio={aspectRatio}
             handleAspectRatioChange={(e) => setAspectRatio(e.target.value)}
+            handleSeekChange={handleSeekChange}
+            handleSeekMouseDown={handleSeekMouseDown}
+            handleSeekMouseUp={handleSeekMouseUp}
+            duration={videoRef.current?.duration || 0}
+            currentTime={videoRef.current?.currentTime || 0}
           />
         </div>
 

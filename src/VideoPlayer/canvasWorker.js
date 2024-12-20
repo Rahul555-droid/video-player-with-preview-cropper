@@ -1,4 +1,3 @@
-// canvasWorker.js
 import { FPS } from './constant'
 
 let interval
