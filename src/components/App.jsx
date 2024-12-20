@@ -1,5 +1,6 @@
 import React from 'react'
-import VideoPlayer from './VideoVerse'
+// import VideoPlayer from './VideoVerse'
+import VideoPlayer from 'VideoPlayer/VideoPlayer'
 
 function App() {
   return (
