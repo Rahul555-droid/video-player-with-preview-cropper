@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom" , "@vue/runtime-core" ]
+    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom" ]
   },
   "include": ["src"],
   "exclude": ["node_modules"]
