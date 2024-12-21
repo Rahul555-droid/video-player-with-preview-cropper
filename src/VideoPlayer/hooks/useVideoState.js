@@ -64,6 +64,7 @@ export const useVideoState = (videoRef) => {
   const handleSeekMouseUp = useCallback(() => {
     if (videoRef.current && !isPlaying) {
       videoRef.current.play()
+      setIsPlaying(true)
     }
   }, [videoRef, isPlaying])
 
