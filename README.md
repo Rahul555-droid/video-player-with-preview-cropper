@@ -1,8 +1,9 @@
 
-# Video Cropper Application
+# Video Cropper Application  
+
+https://video-player-with-preview-cropper.vercel.app/
 
 This project is a web-based video cropper application built entirely without external libraries. The application allows users to:
-
 - Play, pause, and control playback of a video.
 - Adjust playback speed and volume.
 - Crop the video using an overlay cropper with various aspect ratios.
