@@ -1,6 +1,4 @@
-Here's the README file for your implementation:
 
-```markdown
 # Video Cropper Application
 
 This project is a web-based video cropper application built entirely without external libraries. The application allows users to:
