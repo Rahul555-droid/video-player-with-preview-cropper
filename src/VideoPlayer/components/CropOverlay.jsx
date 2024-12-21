@@ -3,7 +3,7 @@ import { memo } from 'react'
 const CropOverlay = memo(({ cropper, onMouseDown }) => {
   return (
     <div
-      className="absolute border-dashed border-white cursor-move"
+      className="absolute border-dashed border-white cursor-move bg-white bg-opacity-35"
       style={{
         left: cropper.x,
         top: cropper.y,

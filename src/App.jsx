@@ -3,7 +3,7 @@ import VideoPlayer from 'VideoPlayer/VideoPlayer'
 
 function App() {
   return (
-    <div className="max-h-100 bg-gray-100 flex flex-col items-center justify-center">
+    <div className="bg-primary">
       <VideoPlayer />
     </div>
   )

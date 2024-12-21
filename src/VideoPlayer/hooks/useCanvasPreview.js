@@ -5,7 +5,8 @@ export const useCanvasPreview = (
   canvasRef,
   videoRef,
   containerRef,
-  cropper
+  cropper,
+  isPreviewActive
 ) => {
   const updateCanvasPreview = useCallback(() => {
     const canvas = canvasRef.current
@@ -62,6 +63,9 @@ export const useCanvasPreview = (
   }, [canvasRef, videoRef, containerRef, cropper])
 
   useEffect(() => {
+
+    if(!isPreviewActive) return;
+
     const worker = new Worker()
 
     worker.onmessage = () => {
@@ -73,7 +77,7 @@ export const useCanvasPreview = (
       worker.postMessage('stop')
       worker.terminate()
     }
-  }, [updateCanvasPreview])
+  }, [updateCanvasPreview , isPreviewActive])
 
   return { updateCanvasPreview }
 }

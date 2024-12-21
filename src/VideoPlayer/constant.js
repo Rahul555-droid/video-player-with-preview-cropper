@@ -10,10 +10,15 @@ export const ASPECT_RATIOS = {
 export const FPS = 30
 export const DEFAULT_ASPECT_RATIO = '9:16'
 export const defaultCropperState = {
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0,
-    dragging: false,
-    resizing: false
-  }
+  x: 0,
+  y: 0,
+  width: 0,
+  height: 0,
+  dragging: false,
+  resizing: false
+}
+
+export const tabs = [
+  { label: 'Preview Session', value: 'preview' },
+  { label: 'Generate Session', value: 'generate' }
+]
