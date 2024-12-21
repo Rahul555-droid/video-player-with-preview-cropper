@@ -113,9 +113,6 @@ The main component that integrates the video player, cropper overlay, and contro
 - Modify the default video file by replacing `/superman_720p.mp4`.
 - Add new aspect ratios in the `useCropper` hook.
 - Adjust the debounce delay for metadata recording in `recordMetadata` (default: 100ms).
-
-## Known Limitations
-- The "Recorded Session Playback" feature is not implemented.
   
 ## Technologies Used
 - **Framework**: React
